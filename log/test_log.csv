@@ -1,5 +1,0 @@
-2025-06-03 16:40:15 - INFO | This is an info message.
-2025-06-03 16:41:34 - INFO | This is an info message.
-2025-06-03 16:42:52 - INFO | This is an info message.
-2025-06-03 16:42:52 - ERROR | {'ERROR': 'ZeroDivisionError', 'Message': 'division by zero', 'File': 'test.py', 'Line': 11}
-2025-06-03 16:42:52 - CRITICAL | {'ERROR': 'ValueError', 'Message': 'This is a critical error.', 'File': 'test.py', 'Line': 17}

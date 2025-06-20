@@ -1,6 +1,6 @@
 from google import genai
 from pathlib import Path
-from log import Log
+from lib.log import Log
 from collections import defaultdict
 import json
 
@@ -50,11 +50,10 @@ def save_chat_history(file: Path, chat_history: dict) -> None:
         json.dump(chat_history, f, indent=4)
     return None
 
-def update_chat_history(prompt="", response="", questions=10):
+def update_chat_history(prompt="", response="", questions=1):
     if questions <= 1:
         questions = 2
-    else:
-        questions += 2
+    questions += 2
 
     chat_history["history_index"] += 1
     chat_history.update({
@@ -69,7 +68,7 @@ def update_chat_history(prompt="", response="", questions=10):
 
     # Check if the number of questions has reached the limit
     if len(chat_history) == (questions + previous_history_index):
-        print("No more questions allowed. Exiting chat.")
+        print(f"No more questions allowed. Exiting chat. | Max -> [{questions - 2}]")
         return "exit"
     return "continue"
 
@@ -97,6 +96,7 @@ f"""Welcome to [{model.model}] Chat Client!
 
     while True:
         prompt = input("Enter your prompt: ")
+        print()
         response = model.respond(
 f"""
 chat history: {chat_history}

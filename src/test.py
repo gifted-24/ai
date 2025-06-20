@@ -1,4 +1,4 @@
-from log import Log
+from lib.log import Log
 
 def test_log():
     log = Log("test_log.csv")
