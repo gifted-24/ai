@@ -29,15 +29,9 @@ class Client(genai.Client):
 
 def load_chat_history(file: Path):
     file.parent.mkdir(parents=True, exist_ok=True)
-    if file.is_file():
+    if file.is_file() and file.stat().st_size > 0:
         with file.open("r", encoding="utf-8") as f:
-            content = f.read()
-            if content:
-                chat_history = defaultdict(dict, json.loads(content))
-            else:
-                chat_history = defaultdict(dict)
-                chat_history["title"] = chat_title
-                chat_history["history_index"] = 0
+            chat_history = defaultdict(dict, json.load(f))
     else:
         chat_history = defaultdict(dict)
         chat_history["title"] = chat_title
@@ -50,10 +44,9 @@ def save_chat_history(file: Path, chat_history: dict) -> None:
         json.dump(chat_history, f, indent=4)
     return None
 
-def update_chat_history(prompt="", response="", questions=1):
-    if questions <= 1:
-        questions = 2
-    questions += 2
+def update_chat_history(prompt="", response="", questions=2):
+    if questions < 1:
+        questions = 1
 
     chat_history["history_index"] += 1
     chat_history.update({
@@ -67,8 +60,8 @@ def update_chat_history(prompt="", response="", questions=1):
     save_chat_history(chat_history_file, chat_history)
 
     # Check if the number of questions has reached the limit
-    if len(chat_history) == (questions + previous_history_index):
-        print(f"No more questions allowed. Exiting chat. | Max -> [{questions - 2}]")
+    if (len(chat_history) - 2) == (questions + previous_history_index):
+        print(f"No more questions allowed. Exiting chat. | Max -> [{questions}]")
         return "exit"
     return "continue"
 
