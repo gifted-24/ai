@@ -8,7 +8,7 @@ def test_log():
     
     # Test error logging
     try:
-        1 / 0  # This will raise a ZeroDivisionError
+        division = 1 / 0  # This will raise a ZeroDivisionError
     except ZeroDivisionError:
         log.error()
     
