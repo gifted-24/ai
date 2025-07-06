@@ -1,0 +1,41 @@
+[33mcommit 1876b7d5b02ed5a24f96b7b09f1805b71f58d4dd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gift Esefo <giftesefo78@gmail.com>
+Date:   Tue Jul 1 22:29:05 2025 +0100
+
+    Update test.py
+
+[33mcommit 71664f064c14647640bfa1a0360adc8241cb1d66[m
+Author: gift esefo <giftesefo78@gmail.com>
+Date:   Mon Jun 23 12:28:16 2025 +0100
+
+    Refactor chat history loading and updating logic for improved clarity and functionality
+
+[33mcommit e8bb62cebbf178f059f246ca6d47bb45a3e9ffc7[m
+Author: gift esefo <giftesefo78@gmail.com>
+Date:   Fri Jun 20 16:34:15 2025 +0100
+
+    Remove compiled Python bytecode files from __pycache__
+
+[33mcommit 5b5fa14e12dce6e2c70d2dbc71c573dad5ff0bc4[m
+Author: gift esefo <giftesefo78@gmail.com>
+Date:   Fri Jun 20 16:32:31 2025 +0100
+
+    returned workspace to bare
+    
+    Removes unused files to return workspace to bare state
+    
+    Clears out unnecessary files, including logs, test data, and configuration files, to streamline the project and reduce clutter.
+    
+    This action enhances maintainability and prepares the workspace for future development efforts.
+
+[33mcommit 8a50efde13c86aebfe975afe5d7b0bda653a4dad[m
+Author: gift esefo <giftesefo78@gmail.com>
+Date:   Fri Jun 20 14:49:08 2025 +0100
+
+    Add core functionality for chat client and logging system
+    
+    - Implemented Client class for handling chat interactions with the AI model.
+    - Added methods for loading and saving chat history in JSON format.
+    - Enhanced logging capabilities with detailed error handling.
+    - Created test script for validating logging functionality.
+    - Updated requirements to include necessary packages.
