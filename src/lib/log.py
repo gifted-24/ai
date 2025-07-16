@@ -1,5 +1,4 @@
-"""log.
-This module provides a custom logging utility for the AI project.
+"""This module provides a custom logging utility for the AI project.
 
 It defines a `Log` class that allows logging messages to a CSV file
 with different severity levels (info, error, critical) and includes
@@ -15,8 +14,7 @@ import sys
 Path("log").mkdir(parents=True, exist_ok=True)
 
 class Log:
-    """Log.
-    A custom logging class that writes log messages to a CSV file.
+    """A custom logging class that writes log messages to a CSV file.
 
     Logs include timestamp, level, message, error details (if applicable),
     file name, and line number.
@@ -32,9 +30,9 @@ class Log:
             file_name (str, optional): The name of the CSV file to log to. Defaults to 'log.csv'.
             header_row (str, optional): The header row for the CSV file. Defaults to 'DATE,LEVEL,MESSAGE,ERROR,FILE,LINE'.
         """
-        file = Path(f"log/{file_name}")
+        self.log_file = Path(f"log/{file_name}")
         logging.basicConfig(
-            filename=file,
+            filename=self.log_file,
             filemode='a',
             level=logging.INFO,
             format='%(asctime)s,%(levelname)s,%(message)s',
@@ -43,8 +41,8 @@ class Log:
         )
         self.fields = header_row.split(',')
         # Write header if the file is new or empty
-        if not file.is_file() or file.stat().st_size == 0:
-            with file.open('w') as f:
+        if not self.log_file.is_file() or self.log_file.stat().st_size == 0:
+            with self.log_file.open('w') as f:
                 f.write(f"{header_row}\n")
                 f.seek(0, 2)
     
