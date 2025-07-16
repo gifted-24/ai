@@ -6,14 +6,48 @@ This project is focused on artificial intelligence and includes various function
 ## Installation
 To set up the project, you need to install the required dependencies. You can do this by running the following command in your terminal:
 
-```
+```Python
 pip install -r requirements.txt
 ```
+
+### Google API Key Setup
+
+This project interacts with the Google Gemini API, which requires an API key for authentication. Follow these steps to obtain and configure your API key:
+
+1.  **Obtain a Google API Key**:
+    *   Go to the Google AI Studio website: [https://aistudio.google.com/](https://aistudio.google.com/)
+    *   Sign in with your Google account.
+    *   Create a new API key if you don't have one already.
+
+2.  **Configure the API Key as an Environment Variable**:
+    *   It is recommended to set your API key as an environment variable to keep it secure and out of your codebase.
+    *   Open your shell's configuration file (e.g., `~/.bashrc`, `~/.zshrc`, or `~/.profile`).
+    *   Add the following line to the file, replacing `'your_api_key_here'` with the actual API key you obtained:
+
+    ```bash
+    export GOOGLE_API_KEY='your_api_key_here'
+    ```
+    
+    *   Save the file and then source it to apply the changes to your current terminal session:
+    
+    ```bash
+    source ~/.bashrc  # Or ~/.zshrc, ~/.profile, etc.
+    ```
+    
+    *   You can verify that the environment variable is set correctly by running:
+    
+    ```bash
+    echo $GOOGLE_API_KEY
+    ```
+    
+    *   You should see your API key printed in the terminal.
+
+**Important**: Never commit your API key directly into your code or public repositories. Environment variables are the recommended way to handle sensitive information like API keys.
 
 ## Usage
 After installing the dependencies, you can run the main functionality by executing the `gemini.py` script. Make sure to navigate to the `src` directory before running the script:
 
-```
+```bash
 cd src
 python gemini.py
 ```

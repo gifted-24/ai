@@ -1,0 +1,31 @@
+.# Python environment
+.env/
+.venv/
+
+# vscode config files
+.vscode/
+
+# log & chat files
+log/
+chat/
+
+# Byte‑compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Data files (if you keep data locally)
+data/
+*.h5
+*.csv
+*.parquet
+*.json
+
+# Secrets & configs
+*.env
+secrets.json
+
+Lectures/
