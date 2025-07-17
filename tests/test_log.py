@@ -6,7 +6,7 @@ Log class, including info, error, and critical logging levels.
 
 import unittest
 from pathlib import Path
-from lib.log import Log
+from src.lib.log import Log
 
 class TestLog(unittest.TestCase):
     LOG_FILE = "test_log.csv"

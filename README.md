@@ -3,10 +3,36 @@
 ## Overview
 This project is focused on artificial intelligence and includes various functionalities implemented in Python. The main component of the project is encapsulated in the `gemini.py` file, which contains the core algorithms and classes related to AI.
 
+## Project Structure
+
+```
+ai/
+├── run.py
+├── tests/
+│   ├── test_gemini.py
+│   └── test_log.py
+└── src/
+    ├── __init__.py
+    ├── gemini.py
+    └── lib/
+        ├── gemini_tool.py
+        └── log.py
+```
+
+## Testing
+The project includes a comprehensive test suite using Python's unittest framework. The tests cover:
+- Gemini main functionality (startup, error handling, graceful exit)
+- Logging system (critical, error, info levels)
+
+To run the tests:
+```bash
+python -m unittest discover -s tests -v
+```
+
 ## Installation
 To set up the project, you need to install the required dependencies. You can do this by running the following command in your terminal:
 
-```Python
+```bash
 pip install -r requirements.txt
 ```
 
@@ -45,11 +71,10 @@ This project interacts with the Google Gemini API, which requires an API key for
 **Important**: Never commit your API key directly into your code or public repositories. Environment variables are the recommended way to handle sensitive information like API keys.
 
 ## Usage
-After installing the dependencies, you can run the main functionality by executing the `gemini.py` script. Make sure to navigate to the `src` directory before running the script:
+After installing the dependencies, you can run the main functionality by executing the `run.py` script from the project root:
 
 ```bash
-cd src
-python gemini.py
+python run.py
 ```
 
 ## Contributing

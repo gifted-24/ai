@@ -19,6 +19,7 @@ Run these tests with unittest discovery or directly as a script.
 import unittest
 from unittest.mock import MagicMock
 import sys
+from src.lib.gemini_tool import Client
 
 class TestGeminiMain(unittest.TestCase):
     """

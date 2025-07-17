@@ -5,8 +5,8 @@ then starts an interactive chat session. It handles graceful exit
 and logs any critical errors.
 """
 
-from lib.gemini_tool import Client
-from lib.log import Log
+from .lib.gemini_tool import Client
+from .lib.log import Log
 
 
 def main(log=None, gemini=None):
@@ -24,5 +24,5 @@ def main(log=None, gemini=None):
     except:
         log.critical()
 
-if __name__ == "__main__":
-    main()
+# Removed the if __name__ == "__main__" block because we have a dedicated entry point (run.py)
+# This improves reusability and prevents accidental direct execution
