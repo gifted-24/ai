@@ -9,12 +9,13 @@ This project is focused on artificial intelligence and includes various function
 ai/
 ├── run.py
 ├── tests/
-│   ├── test_gemini.py
-│   └── test_log.py
+│   ├── gemini_test.py
+│   └── log_test.py
 └── src/
     ├── __init__.py
     ├── gemini.py
     └── lib/
+        ├── __init__.py
         ├── gemini_tool.py
         └── log.py
 ```
