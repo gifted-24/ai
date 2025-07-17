@@ -51,11 +51,14 @@ This project interacts with the Google Gemini API, which requires an API key for
 2.  **Configure the API Key as an Environment Variable**:
     *   It is recommended to set your API key as an environment variable to keep it secure and out of your codebase.
     *   Open your shell's configuration file (e.g., `~/.bashrc`, `~/.zshrc`, or `~/.profile`).
-    *   Add the following line to the file, replacing `'your_api_key_here'` with the actual API key you obtained:
+    *   Add the following lines to the file, replacing `'your_api_key_here'` with the actual API key you obtained:
 
     ```bash
     export GOOGLE_API_KEY='your_api_key_here'
+    export GEMINI_API_KEY='your_api_key_here'
     ```
+    
+    *   It is highly recommended to set both `GOOGLE_API_KEY` and `GEMINI_API_KEY` to the same value for maximum compatibility and robustness.
     
     *   Save the file and then source it to apply the changes to your current terminal session:
     
@@ -63,10 +66,11 @@ This project interacts with the Google Gemini API, which requires an API key for
     source ~/.bashrc  # Or ~/.zshrc, ~/.profile, etc.
     ```
     
-    *   You can verify that the environment variable is set correctly by running:
+    *   You can verify that the environment variables are set correctly by running:
     
     ```bash
     echo $GOOGLE_API_KEY
+    echo $GEMINI_API_KEY
     ```
     
     *   You should see your API key printed in the terminal.
