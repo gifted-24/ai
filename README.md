@@ -5,7 +5,7 @@ This project is focused on artificial intelligence and includes various function
 
 ## Project Structure
 
-```code_block
+```text
 ai/
 ├── run.py
 ├── tests/
@@ -26,7 +26,7 @@ The project includes a comprehensive test suite using Python's unittest framewor
 
 To run the tests:
 ```bash
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -p *_test.py
 ```
 
 ## Installation
