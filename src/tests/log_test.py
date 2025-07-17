@@ -62,6 +62,3 @@ class TestLog(unittest.TestCase):
         self.assertIn("CRITICAL", content)
         self.assertIn("ValueError", content)
         self.assertIn("Critical error occurred", content)
-
-if __name__ == "__main__":
-    unittest.main()

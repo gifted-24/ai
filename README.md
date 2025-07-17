@@ -8,16 +8,18 @@ This project is focused on artificial intelligence and includes various function
 ```text
 ai/
 ├── run.py
-├── tests/
-│   ├── gemini_test.py
-│   └── log_test.py
-└── src/
-    ├── __init__.py
-    ├── gemini.py
-    └── lib/
-        ├── __init__.py
-        ├── gemini_tool.py
-        └── log.py
+├── test.py
+├── src/
+│   ├── __init__.py
+│   ├── gemini.py
+│   ├── lib/
+│   │   ├── __init__.py
+│   │   ├── gemini_tool.py
+│   │   └── log.py
+│   └── tests/
+│       ├── __init__.py
+│       ├── gemini_test.py
+│       └── log_test.py
 ```
 
 ## Testing
@@ -27,7 +29,7 @@ The project includes a comprehensive test suite using Python's unittest framewor
 
 To run the tests:
 ```bash
-python -m unittest discover -s tests -p *_test.py
+python -m unittest -v test
 ```
 
 ## Installation

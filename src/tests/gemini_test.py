@@ -69,6 +69,3 @@ class TestGeminiMain(unittest.TestCase):
             any(call[0][0] == 'Chat ended successfully.' for call in log.info.call_args_list),
             "Expected log.info('Chat ended successfully.') to be called on SystemExit."
         )
-
-if __name__ == "__main__":
-    unittest.main()

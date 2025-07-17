@@ -5,8 +5,8 @@ then starts an interactive chat session. It handles graceful exit
 and logs any critical errors.
 """
 
-from .lib.gemini_tool import Client
-from .lib.log import Log
+from src.lib.gemini_tool import Client
+from src.lib.log import Log
 
 
 def main(log=None, gemini=None):
