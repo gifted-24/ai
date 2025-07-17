@@ -156,9 +156,11 @@ class Client(genai.Client):
             str: The name of the model used for the chat.
         """
         # Welcome message
-        print(
-    f"""Welcome to [{self.model}] Chat Client!\n    1. Check [response.csv] for [{self.model}]'s response.\n    2. Type 'exit' to end the chat.\n"""
-        )
+        welcome_message = f"""
+Welcome to [{self.model}] Chat Client!
+    1. Check [response.csv] for [{self.model}]'s response.
+    2. Type 'exit' to end the chat.\n"""
+        print(welcome_message)
     
         # Enter chat title
         self.chat_title = input("Enter chat title: ")
@@ -167,11 +169,15 @@ class Client(genai.Client):
         self.history_index = self.history.get("history_index", 0)
     
         while True:
-            prompt = input("Enter your prompt: ")
-            print()
-            response = self.respond(
-    f"""\n    chat history: {self.context[-self.context_window:]}\n    Instruction: \n        1. Always check the 'chat history' for context only.\n        2. Return response for current prompt only.\n        3. your knowledge base is the basis for your response.\n        4. Do not repeat the chat history in your response.\n    prompt: {prompt}\n    """
-            )
+            text = input("\nEnter your prompt: ")
+            prompt = f"""chat history: {self.context[-self.context_window:]}
+Instruction: 
+    1. Always check the 'chat history' for context only.
+    2. Return response for current prompt only.
+    3. your knowledge base is the basis for your response.  
+    4. Do not repeat the chat history in your response.
+    prompt: {text}"""
+            response = self.respond(prompt)
             status = self.update_history(prompt, response)
     
             file = Path(f"chat/response.csv")

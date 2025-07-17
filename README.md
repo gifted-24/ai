@@ -5,7 +5,7 @@ This project is focused on artificial intelligence and includes various function
 
 ## Project Structure
 
-```
+```code_block
 ai/
 ├── run.py
 ├── tests/
