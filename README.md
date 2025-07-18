@@ -7,19 +7,22 @@ This project is focused on artificial intelligence and includes various function
 
 ```text
 ai/
-├── run.py
-├── test.py
 ├── src/
-│   ├── __init__.py
-│   ├── gemini.py
 │   ├── lib/
 │   │   ├── __init__.py
 │   │   ├── gemini_tool.py
 │   │   └── log.py
-│   └── tests/
-│       ├── __init__.py
-│       ├── gemini_test.py
-│       └── log_test.py
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── gemini_test.py
+│   │   └── log_test.py
+│   ├── __init__.py
+│   └── gemini.py
+├── run.py
+├── test.py
+├── requirements.txt
+├── LICENSE
+└── README.md
 ```
 
 ## Testing
